@@ -12,7 +12,7 @@
             <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
         </div>
     </div>
-</div>
+</div><br/>
 
 
 @if ($message = Session::get('success'))

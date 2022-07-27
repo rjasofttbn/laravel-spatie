@@ -8,12 +8,13 @@
             <h2>Role Management</h2>
         </div>
         <div class="pull-right">
+            <!-- <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a> -->
         @can('role-create')
             <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
             @endcan
         </div>
     </div>
-</div>
+</div><br/>
 
 @if ($message = Session::get('success'))
     <div class="alert alert-success">
@@ -32,6 +33,10 @@
         <td>{{ ++$i }}</td>
         <td>{{ $role->name }}</td>
         <td>
+
+        <!-- <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
+       <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+        <a class="btn btn-danger" href="{{ route('roles.destroy',$role->id) }}"> Delete</a> -->
             <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
             @can('role-edit')
                 <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>

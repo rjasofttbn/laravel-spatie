@@ -8,13 +8,15 @@
                 <h2>Products</h2>
             </div>
             <div class="pull-right">
+            
+            <!-- <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a> -->
+        
                 @can('product-create')
                 <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
                 @endcan
             </div>
         </div>
-    </div>
-
+    </div><br/>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -35,6 +37,10 @@
 	        <td>{{ $product->name }}</td>
 	        <td>{{ $product->detail }}</td>
 	        <td>
+            <!-- <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
+       <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+        <a class="btn btn-danger" href="{{ route('products.destroy',$product->id) }}"> Delete</a> -->
+    
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                     <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a>
                     @can('product-edit')
